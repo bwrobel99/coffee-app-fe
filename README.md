@@ -1,7 +1,7 @@
 # coffee-app-fe
 
 ## Details
-coffee-app-fe is a single page application created for studies project. 
+coffee-app-fe is a single page application. 
 
 Features:
 
