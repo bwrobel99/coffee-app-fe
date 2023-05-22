@@ -1,0 +1,22 @@
+@use "variables" as v;
+body {
+    margin: 0;
+    padding: 0;
+}
+#app {
+    margin: 0;
+    padding: 0;
+    main {
+        background-color: v.$bg_color;
+        height: calc(100vh - v.$header_height);
+        a {
+            text-decoration: none;
+            color: #000;
+            font-family: 'mainFont';
+        }
+        h1 {
+            color: #000;
+            font-family: 'mainFont';
+        }
+    }
+}

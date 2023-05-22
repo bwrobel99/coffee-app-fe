@@ -1,0 +1,101 @@
+@use "_variables" as v;
+
+header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    .header_wrapper {
+        -webkit-box-shadow: 0px 7px 20px -7px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 0px 7px 20px -7px rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 7px 20px -7px rgba(0, 0, 0, 0.5);
+        z-index: 99;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: v.$header_height;
+        background-color: v.$header_color;
+        padding: 0 v.$header_padding 0 v.$header_padding;
+        h1 {
+            color: v.$text_color;
+            font-size: 20px;
+            @media (min-width: v.$desktop_breakpoint) {
+                font-size: 26px;
+            }
+            font-family: "mainFont";
+        }
+    }
+    nav {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-color: v.$menu_color;
+        height: calc(100% - #{v.$header_height});
+        max-width: 0;
+        width: 100%;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+
+        &.open {
+            max-width: v.$open_menu_width;
+        }
+        ul {
+            padding: v.$header_height 0 0 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 46px;
+            list-style: none;
+            width: 100%;
+            li {
+                // color: #000;
+                font-family: "Quicksand";
+                font-size: 20px;
+                a {
+                    text-decoration: none;
+                    color: #000;
+                    &.router-link-active {
+                        text-decoration: underline;
+                    }
+                    &:visited {
+                        color: inherit;
+                    }
+                }
+            }
+        }
+    }
+
+    // desktop
+    @media (min-width: v.$desktop_breakpoint) {
+        nav {
+            // position: relative;
+            top: 0;
+            max-width: 50%;
+            max-height: v.$header_height;
+            background-color: transparent;
+            padding: 0 v.$header_padding 0 0;
+            ul {
+                padding: 0;
+                flex-direction: row;
+                justify-content: flex-end;
+                height: 100%;
+                li {
+                    a {
+                        z-index: 999;
+                        color: v.$text_color;
+                        &:visited {
+                            color: v.$text_color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.relative_header {
+    height: v.$header_height;
+}

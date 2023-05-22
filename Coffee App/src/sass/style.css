@@ -1,0 +1,153 @@
+@font-face {
+  font-family: "mainFont";
+  src: url("https://cdn.statically.io/gh/GabrielaGodek/Fonts/main/CabinetGrotesk_Complete/Fonts/OTF/CabinetGrotesk-Regular.otf");
+}
+header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+header .header_wrapper {
+  -webkit-box-shadow: 0px 7px 20px -7px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 7px 20px -7px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 7px 20px -7px rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  background-color: #fff;
+  padding: 0 53px 0 53px;
+}
+header .header_wrapper h1 {
+  color: #000;
+  font-size: 20px;
+  font-family: "mainFont";
+}
+@media (min-width: 1000px) {
+  header .header_wrapper h1 {
+    font-size: 26px;
+  }
+}
+header nav {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: #e8e4e6;
+  height: calc(100% - 90px);
+  max-width: 0;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+header nav.open {
+  max-width: 293px;
+}
+header nav ul {
+  padding: 90px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 46px;
+  list-style: none;
+  width: 100%;
+}
+header nav ul li {
+  font-family: "Quicksand";
+  font-size: 20px;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: #000;
+}
+header nav ul li a.router-link-active {
+  text-decoration: underline;
+}
+header nav ul li a:visited {
+  color: inherit;
+}
+@media (min-width: 1000px) {
+  header nav {
+    top: 0;
+    max-width: 50%;
+    max-height: 90px;
+    background-color: transparent;
+    padding: 0 53px 0 0;
+  }
+  header nav ul {
+    padding: 0;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 100%;
+  }
+  header nav ul li a {
+    z-index: 999;
+    color: #000;
+  }
+  header nav ul li a:visited {
+    color: #000;
+  }
+}
+
+.relative_header {
+  height: 90px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  margin: 0;
+  padding: 0;
+}
+#app main {
+  background-color: #F0C9BA;
+  height: calc(100vh - 90px);
+}
+#app main a {
+  text-decoration: none;
+  color: #000;
+  font-family: "mainFont";
+}
+#app main h1 {
+  color: #000;
+  font-family: "mainFont";
+}
+
+.startpage_wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.startpage_wrapper div {
+  cursor: pointer;
+}
+
+.listing_page {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.listing_page .product_tile {
+  max-width: calc(25% - 30px);
+  row-gap: 30px;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=style.css.map */

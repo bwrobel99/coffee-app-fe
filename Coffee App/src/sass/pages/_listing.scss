@@ -1,0 +1,21 @@
+.listing_page {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    .product_tile {
+        max-width: calc((100% / 4) - 30px);
+        row-gap: 30px;
+        width: 100%;
+        // border: 1px solid black;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .image {}
+        .desc {
+            
+        }
+    }
+}
