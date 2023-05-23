@@ -6,6 +6,7 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
+// add cors to update server proxy
 import cors from 'cors';
 
 const app = createApp(App)

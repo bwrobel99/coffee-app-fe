@@ -34,6 +34,7 @@
 </script>
 <template>
   <div class="listing_page">
+    <!-- create a loop with data from api -->
     <ProductTile />
     <ProductTile />
     <ProductTile />
