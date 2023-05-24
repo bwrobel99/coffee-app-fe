@@ -12,6 +12,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
+  // add proxy to avoid mode: no-cors
   server: {
     proxy: {
       '/api': {
