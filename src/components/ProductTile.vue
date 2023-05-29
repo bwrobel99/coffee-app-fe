@@ -21,9 +21,9 @@
     <div class="desc">
       <h1 class="title">{{ name }}</h1>
       <div class="prices">
-        <div class="oldPrice">{{ price }}</div>
         <!-- if price after discount is lower than regular price display new price -->
         <div class="newPrice" v-if="price > (price - discount)">{{ price - discount }}</div>
+        <div class="price">{{ price }}</div>
       </div>
     </div>
   </div>

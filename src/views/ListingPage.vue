@@ -23,9 +23,11 @@
   }
 </script>
 <template>
-  <div class="listing_page">
-    <div class="product_tile" v-for="coffee in items">
-      <ProductTile :coffee="coffee" />
+  <main class="listingpage">
+    <div class="listingpage_wrapper">
+      <div class="product_tile" v-for="coffee in items">
+        <ProductTile :coffee="coffee" />
+      </div>
     </div>
-  </div>
+  </main>
 </template>
