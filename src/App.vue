@@ -12,10 +12,10 @@ import HeaderItem from './components/HeaderItem.vue'
   </header>
   <div class="relative_header"></div>
 
-  <main>
+  <!-- <main> -->
     <router-view></router-view>
     <!-- <StartedPage/> -->
-  </main>
+  <!-- </main> -->
 </template>
 
 

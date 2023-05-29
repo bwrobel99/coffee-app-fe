@@ -8,7 +8,6 @@ body {
     padding: 0;
     main {
         background-color: v.$bg_color;
-        height: calc(100vh - v.$header_height);
         a {
             text-decoration: none;
             color: #000;
