@@ -22,8 +22,8 @@
       <h1 class="title">{{ name }}</h1>
       <div class="prices">
         <!-- if price after discount is lower than regular price display new price -->
-        <div class="newPrice" v-if="price > (price - discount)">{{ price - discount }}</div>
-        <div class="price">{{ price }}</div>
+        <div class="newPrice" v-if="price > (price - discount)">{{ price - discount }} zł</div>
+        <div class="price">{{ price }} zł</div>
       </div>
     </div>
   </div>

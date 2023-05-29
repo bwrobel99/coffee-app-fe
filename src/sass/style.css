@@ -207,6 +207,9 @@ main.startpage {
   transform: rotate(70deg);
   background-color: #000;
 }
+.listingpage_wrapper .product_tile .tile .desc .prices .newPrice {
+  color: #9e3737;
+}
 .listingpage_wrapper .product_tile:last-child {
   margin: auto auto auto 20px;
 }
