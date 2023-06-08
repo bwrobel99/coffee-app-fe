@@ -38,7 +38,7 @@ header {
         overflow: hidden;
         transition: all 0.3s ease;
         z-index: 999;
-
+        
         &.open {
             max-width: v.$open_menu_width;
         }
