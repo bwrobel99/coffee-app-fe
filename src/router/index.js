@@ -10,6 +10,10 @@ const router = createRouter({
       component: StartPage
     },
     {
+      path: '/favorite',
+      name: 'favorite',
+    },
+    {
       path: '/listing',
       name: 'listing',
       // route level code-splitting
