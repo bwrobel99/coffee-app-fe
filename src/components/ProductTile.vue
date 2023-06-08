@@ -25,7 +25,6 @@
         <div class="newPrice" v-if="price > (price - discount)">{{ price - discount }} zł</div>
         <div class="price">{{ price }} zł</div>
       </div>
-      <button @click="addToCart">Add to Cart</button>
     </div>
   </div>
 </template>

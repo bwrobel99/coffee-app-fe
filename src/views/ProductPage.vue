@@ -20,7 +20,7 @@
         }
       }).then(data => {
         // assign fetched data to table
-        this.items = data[0]
+        this.items = data[1]
       })
     }
   }
@@ -33,7 +33,8 @@
   <main class="productpage">
     <div class="productpage_wrapper">
       <div class="product_tile">
-        <ProductTile :coffee="coffee" />
+        <!-- {{ items }}-->
+        {<ProductTile :coffee="items" />}
       </div>
     </div>
   </main>
