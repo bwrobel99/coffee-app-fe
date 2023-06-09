@@ -23,10 +23,15 @@ const toggleFavorite = () => {
 const addToCart = () => {
   console.log("Added to cart", props.coffee)
 };
+
+const openProductCard = (id) => {
+  console.log('Opened coffee page with id:', id);
+  router.push({name: "product" });
+};
 </script>
 
 <template>
-  <div class="tile">
+  <div class="tile" @click="openProductCard(id)">
     <div class="image">
       <img src="../assets/kawa_test.svg" :alt="name">
       <div class="favorite">
