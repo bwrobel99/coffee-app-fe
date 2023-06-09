@@ -1,12 +1,15 @@
 <script setup>
 import { defineProps, ref,computed } from 'vue';
+import {useRouter} from 'vue-router';
 
 // get props from parent component
 const props = defineProps({
   coffee: {
     type: Object,
     required: true
-  }
+  },
+
+
 });
 
 // Destructuring from props
@@ -19,10 +22,20 @@ const isFavorite = ref(false);
 const toggleFavorite = () => {
   isFavorite.value = !isFavorite.value;
 };
+
+const addToCart = () => {
+  console.log("Added to cart", props.coffee)
+};
+
+const openProductCard = (id) => {
+  console.log('Opened coffee page with id:', id);
+  router.push({name: "product" });
+};
 </script>
 
 <template>
-  <div class="tile">
+  <div class="tile" @click="openProductCard(id)">
+    <RouterLink :to="'/product/:id'" class="productpage">
     <div class="image">
       <img src="../assets/kawa_test.svg" :alt="name">
       <div class="favorite">
@@ -37,7 +50,9 @@ const toggleFavorite = () => {
         <div class="newPrice" v-if="price > (price - discount)">{{ price - discount }} zł</div>
         <div class="price">{{ price }} zł</div>
       </div>
+      <button @click="addToCart(coffee)">Add to cart</button>
     </div>
+  </RouterLink>
   </div>
 </template>
 

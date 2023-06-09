@@ -20,7 +20,7 @@
         }
       }).then(data => {
         // assign fetched data to table
-        this.items = data[1]
+        this.items = data
       })
     }
   }
