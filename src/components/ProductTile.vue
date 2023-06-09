@@ -35,24 +35,29 @@ const openProductCard = (id) => {
 
 <template>
   <div class="tile" @click="openProductCard(id)">
-    <RouterLink :to="'/product/:id'" class="productpage">
+    
     <div class="image">
+      <RouterLink :to="'/product/:id'" class="productpage">
       <img src="../assets/kawa_test.svg" :alt="name">
+      </RouterLink>
       <div class="favorite">
         <button class="favorite-button" @click="toggleFavorite">
           <i :class="['heart-icon', isFavorite ? 'fas fa-heart' : 'far fa-heart']" alt="Favorite"></i>
         </button>
       </div>
     </div>
+    
     <div class="desc">
+      <RouterLink :to="'/product/:id'" class="productpage">
       <h1 class="title">{{ name }}</h1>
       <div class="prices">
         <div class="newPrice" v-if="price > (price - discount)">{{ price - discount }} zł</div>
         <div class="price">{{ price }} zł</div>
       </div>
+      </RouterLink>
       <button @click="addToCart(coffee)">Add to cart</button>
     </div>
-  </RouterLink>
+  
   </div>
 </template>
 

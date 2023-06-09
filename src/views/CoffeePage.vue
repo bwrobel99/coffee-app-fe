@@ -39,7 +39,7 @@
     <main class="productpage">
       <div class="productpage_wrapper">
         <div class="product_tile">
-            {<ProductTile :coffee="items" />}
+            <ProductTile :coffee="items" />
           </div>
         </div>
     </main>
