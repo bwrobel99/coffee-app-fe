@@ -19,6 +19,10 @@ const isFavorite = ref(false);
 const toggleFavorite = () => {
   isFavorite.value = !isFavorite.value;
 };
+
+const addToCart = () => {
+  console.log("Added to cart", props.coffee)
+};
 </script>
 
 <template>
@@ -37,6 +41,7 @@ const toggleFavorite = () => {
         <div class="newPrice" v-if="price > (price - discount)">{{ price - discount }} zł</div>
         <div class="price">{{ price }} zł</div>
       </div>
+      <button @click="addToCart(coffee)">Add to cart</button>
     </div>
   </div>
 </template>
