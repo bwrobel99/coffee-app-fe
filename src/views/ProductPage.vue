@@ -23,14 +23,25 @@ export default {
       });
   },
 };
+// const { price } = items
 </script>
 
 <template>
   <main class="productpage">
     <div class="productpage_wrapper">
       <div class="product_tile">
+<<<<<<< Updated upstream
         <!-- {{ items }}-->
         {<ProductTile :coffee="items" />}
+=======
+        <ProductTile :coffee="items" />
+        <div class="cartBtn">
+          <div class="price">{{ items.price }} 10zl</div>
+          <div class="btn">
+          <button @click="addToCart">Add To Cart</button>
+        </div>
+        </div>
+>>>>>>> Stashed changes
       </div>
     </div>
   </main>

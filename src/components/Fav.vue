@@ -43,14 +43,12 @@ export default {
 </template>
 
 <style>
-
 .favorites-container {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   padding-left: 40px;
 }
-
 .tiles{
   /* max-width: calc(50% - 30px); */
   width: 96%;
@@ -101,5 +99,4 @@ export default {
 .prices .newPrice {
   color: #9e3737;
 }
-
 </style>

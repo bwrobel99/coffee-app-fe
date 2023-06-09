@@ -27,7 +27,7 @@ const props = defineProps({
 });
 
 // Destructuring from props
-const { id, name, price, discount } = props.coffee;
+const { id, name, price, discount, description } = props.coffee;
 
 // Define a ref to track the favorite state
 const isFavorite = ref(false);
@@ -82,9 +82,13 @@ watchEffect(() => {
 </script>
 
 <template>
+<<<<<<< Updated upstream
   <div class="tile">
+=======
+  <div class="tile" >
+>>>>>>> Stashed changes
     <div class="image">
-      <img src="../assets/kawa_test.svg" :alt="name" />
+      <img src="../assets/kawa_test.svg" :alt="name" @click="openProductPage(id)">
       <div class="favorite">
 <<<<<<< HEAD
         <button class="favorite-button" @click="toggleFavorite">
@@ -110,13 +114,16 @@ watchEffect(() => {
         </div>
         <div class="price">{{ price }} zł</div>
       </div>
+      <div class="details">{{ description }}</div>
     </div>
   </div>
 </template>
 
 <style>
-.image {
+.tile{
   position: relative;
+}
+.image {
   display: inline-block;
 }
 
@@ -125,14 +132,19 @@ watchEffect(() => {
   top: 0;
   right: 0;
   padding: 6px;
-  background-color: white;
+  background-color: transparent;
   color: black;
-  transform: translate(150%, 0%);
+  /* transform: translate(150%, 0%); */
 }
 
 .favorite-button {
+<<<<<<< Updated upstream
   background: white;
   border: 0;
+=======
+  background: transparent; 
+  border: 0; 
+>>>>>>> Stashed changes
   padding: 0px;
   cursor: pointer;
   outline: none;

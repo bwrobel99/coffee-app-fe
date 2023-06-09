@@ -71,7 +71,7 @@ export default {
     >
       <template #item="{ element }">
         <div class="product_tile">
-          <ProductTile :coffee="element" />
+          <ProductTile :coffee="element" :items="items" :favoriteItems="favoriteItems"/>
         </div>
       </template>
     </draggable>
@@ -88,5 +88,8 @@ export default {
 <style scoped>
 .ghost {
   opacity: 0.5;
+}
+.details {
+  display: none;
 }
 </style>
