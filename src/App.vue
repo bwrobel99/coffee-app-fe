@@ -1,21 +1,19 @@
 <script setup>
-// import { RouterView } from 'vue-router'
-import HeaderItem from './components/HeaderItem.vue'
-// import StartedPage from './views/StartPage.vue'
+import HeaderItem from "./components/HeaderItem.vue";
 </script>
 
 <template>
   <header>
     <div class="wrapper">
-      <HeaderItem/>
+      <HeaderItem />
     </div>
   </header>
   <div class="relative_header"></div>
-
-  <!-- <main> -->
-    <router-view></router-view>
-    <!-- <StartedPage/> -->
-  <!-- </main> -->
+  <router-view />
 </template>
 
-
+<style>
+.v-toast__item {
+  font-family: "mainFont";
+}
+</style>
