@@ -26,12 +26,13 @@ const addToCart = () => {
 
 const openProductCard = (id) => {
   console.log('Opened coffee page with id:', id);
-  router.push({name: "product" });
+  this.$router.push({name: "product" });
 };
 </script>
 
 <template>
   <div class="tile" @click="openProductCard(id)">
+    <RouterLink :to="'/coffees/${id}'" class="tile-link">
     <div class="image">
       <img src="../assets/kawa_test.svg" :alt="name">
       <div class="favorite">
@@ -48,6 +49,7 @@ const openProductCard = (id) => {
       </div>
       <button @click="addToCart(coffee)">Add to cart</button>
     </div>
+  </RouterLink>
   </div>
 </template>
 
