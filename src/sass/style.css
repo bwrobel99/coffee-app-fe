@@ -218,5 +218,15 @@ main.startpage {
     margin: unset;
   }
 }
+.favorite_wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 20px 0 0;
+  row-gap: 20px;
+}
+
 
 /*# sourceMappingURL=style.css.map */

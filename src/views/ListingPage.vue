@@ -1,11 +1,17 @@
 <script setup>
+
   import ProductTile from '../components/ProductTile.vue';
+
 </script>
+
 <script>
- export default {
+
+export default {
+  
     data() {
       return {
-        items: [] // Table to assign data from API
+        items: [], // Table to assign data from API
+        favoriteItems: [] // Array to store favorite items
       };
     },
     mounted() {
@@ -19,14 +25,15 @@
         // assign fetched data to table
         this.items = data
       })
-    }
-  }
+    },
+}
 </script>
+
 <template>
   <main class="listingpage">
     <div class="listingpage_wrapper">
-      <div class="product_tile" v-for="coffee in items">
-        <ProductTile :coffee="coffee" />
+      <div class="product_tile" v-for="coffee in items" :key="coffee.id">
+        <ProductTile :coffee="coffee" :items="items" :favoriteItems="favoriteItems"/>
       </div>
     </div>
   </main>
