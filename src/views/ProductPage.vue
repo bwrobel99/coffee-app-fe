@@ -1,7 +1,7 @@
 <script setup>
 import ProductTile from "../components/ProductTile.vue";
-import { useRouter } from 'vue-router';
-import { ref } from 'vue';
+import { useRouter } from "vue-router";
+import { ref } from "vue";
 </script>
 <script>
 export default {
@@ -13,7 +13,7 @@ export default {
   mounted() {
     const router = useRouter();
     const id = router.currentRoute.value.params.id;
-    let url = '/api/coffees/' + id
+    let url = "/api/coffees/" + id;
     fetch(url)
       .then((res) => {
         if (res.ok) {
@@ -33,9 +33,7 @@ export default {
 <template>
   <main class="productpage">
     <div class="productpage_wrapper">
-      <div class="product_tile">
-        <ProductTile :coffee="items" />
-      </div>
+      <ProductTile :coffee="items" />
     </div>
   </main>
 </template>

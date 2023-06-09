@@ -150,7 +150,23 @@ main.startpage {
   padding: 20px 0 0;
   row-gap: 20px;
 }
-.listingpage_wrapper .product_tile {
+
+main.favorites-page {
+  height: 100%;
+  padding: 0 0 20px;
+}
+
+.favorites-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0 0;
+  row-gap: 20px;
+}
+
+.product_tile {
   max-width: calc(50% - 30px);
   width: 100%;
   background-color: #fff;
@@ -164,40 +180,40 @@ main.startpage {
   cursor: pointer;
 }
 @media screen and (min-width: 1000px) {
-  .listingpage_wrapper .product_tile {
+  .product_tile {
     max-width: calc(20% - 30px);
   }
 }
-.listingpage_wrapper .product_tile .tile {
+.product_tile .tile {
   width: 100%;
   height: 100%;
   text-align: center;
 }
-.listingpage_wrapper .product_tile .tile .image {
+.product_tile .tile .image {
   padding-top: 20px;
 }
-.listingpage_wrapper .product_tile .tile .desc {
+.product_tile .tile .desc {
   font-family: "mainFont";
   background-color: #CA8F7A;
   border-radius: 10px 10px 0 0;
   padding: 10px 0 0;
 }
-.listingpage_wrapper .product_tile .tile .desc h1 {
+.product_tile .tile .desc h1 {
   margin: 0;
   font-size: 28px;
 }
-.listingpage_wrapper .product_tile .tile .desc .prices {
+.product_tile .tile .desc .prices {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   padding: 0 0 10px;
   font-size: 24px;
 }
-.listingpage_wrapper .product_tile .tile .desc .prices .newPrice ~ .price {
+.product_tile .tile .desc .prices .newPrice ~ .price {
   opacity: 0.3;
   position: relative;
 }
-.listingpage_wrapper .product_tile .tile .desc .prices .newPrice ~ .price::before {
+.product_tile .tile .desc .prices .newPrice ~ .price::before {
   content: "";
   position: absolute;
   top: -2%;
@@ -207,26 +223,16 @@ main.startpage {
   transform: rotate(70deg);
   background-color: #000;
 }
-.listingpage_wrapper .product_tile .tile .desc .prices .newPrice {
+.product_tile .tile .desc .prices .newPrice {
   color: #9e3737;
 }
-.listingpage_wrapper .product_tile:last-child {
+.product_tile:last-child {
   margin: auto auto auto 20px;
 }
 @media screen and (min-width: 1000px) {
-  .listingpage_wrapper .product_tile:last-child {
+  .product_tile:last-child {
     margin: unset;
   }
 }
-.favorite_wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 20px;
-  padding: 20px 0 0;
-  row-gap: 20px;
-}
-
 
 /*# sourceMappingURL=style.css.map */
