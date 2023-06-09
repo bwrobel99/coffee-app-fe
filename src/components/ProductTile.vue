@@ -1,12 +1,15 @@
 <script setup>
 import { defineProps, ref,computed } from 'vue';
+import {useRouter} from 'vue-router';
 
 // get props from parent component
 const props = defineProps({
   coffee: {
     type: Object,
     required: true
-  }
+  },
+
+
 });
 
 // Destructuring from props
@@ -26,13 +29,13 @@ const addToCart = () => {
 
 const openProductCard = (id) => {
   console.log('Opened coffee page with id:', id);
-  this.$router.push({name: "product" });
+  router.push({name: "product" });
 };
 </script>
 
 <template>
   <div class="tile" @click="openProductCard(id)">
-    <RouterLink :to="'/coffees/${id}'" class="tile-link">
+    <RouterLink :to="'/product/:id'" class="productpage">
     <div class="image">
       <img src="../assets/kawa_test.svg" :alt="name">
       <div class="favorite">

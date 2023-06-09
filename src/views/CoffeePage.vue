@@ -13,7 +13,7 @@
       };
     },
     mounted() {
-      fetch("/api/coffees").then(res => {
+      fetch("/api/coffees/:id").then(res => {
         if(res.ok) {
           return res.json()
         } else {
@@ -30,6 +30,7 @@
 
 
 
+
 <template>
-   
+  
 </template>
