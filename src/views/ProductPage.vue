@@ -10,6 +10,16 @@ export default {
       items: [], // Table to assign data from API
     };
   },
+  methods: {
+    addToCart() {
+      const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+      const item = this.items; // Add whole item do the cart
+      cartItems.push(item);
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+      console.log("Added to the cart:", item);
+    },
+
+  },
   mounted() {
     const router = useRouter();
     const id = router.currentRoute.value.params.id;
