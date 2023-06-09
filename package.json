@@ -15,7 +15,14 @@
     "cors": "^2.8.5",
     "pinia": "^2.0.36",
     "vue": "^3.3.2",
+<<<<<<< Updated upstream
     "vue-router": "^4.2.0"
+=======
+    "vue-router": "^4.2.2",
+    "vue-toast-notification": "^3.1.1",
+    "vuedraggable": "^4.1.0",
+    "vuex": "^4.1.0"
+>>>>>>> Stashed changes
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",

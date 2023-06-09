@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
+<<<<<<< Updated upstream
 import StartPage from '../views/StartPage.vue'
+=======
+>>>>>>> Stashed changes
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,15 +10,20 @@ const router = createRouter({
     {
       path: '/',
       name: 'startPage',
-      component: StartPage
+      component: () => import('../views/StartPage.vue')
     },
     {
       path: '/listing',
       name: 'listing',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/ListingPage.vue')
+<<<<<<< Updated upstream
+=======
+    },
+    {
+      path: '/product/:id',
+      name: 'product',
+      component: () => import('../views/ProductPage.vue')
+>>>>>>> Stashed changes
     }
   ]
 })
