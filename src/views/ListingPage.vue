@@ -1,46 +1,39 @@
 <script setup>
-import { ref, onMounted } from "vue";
 import ProductTile from "../components/ProductTile.vue";
 import draggable from "vuedraggable";
 import { useCoffeePrecedence } from "./utils/useCoffeePrecedence";
+import { useStore } from "./utils/useStore";
+import { onBeforeUnmount, onMounted, ref, watch } from "vue";
 
-const coffees = ref([]);
-const { coffeePrecedence, savePrecedence, sortWithPrecedence } =
-  useCoffeePrecedence("allCoffeesListPrecedence");
+const { coffees, updateCoffeeList } = useStore();
+const { savePrecedence, sortWithPrecedence } = useCoffeePrecedence();
+
+const sortedCoffees = ref([]);
+const setSortedCoffees = () =>
+  (sortedCoffees.value = sortWithPrecedence(coffees.value));
 
 onMounted(async () => {
-  try {
-    const response = await fetch("/api/coffees");
-    const data = await response.json();
-
-    coffees.value = sortWithPrecedence(data);
-
-    if (!coffeePrecedence) {
-      savePrecedence(coffees.value, false);
-    }
-  } catch (e) {
-    console.log(e);
-  }
+  await updateCoffeeList();
 });
 
+watch(coffees, () => setSortedCoffees());
+
 const handleDragEnd = () => {
-  savePrecedence(coffees.value);
+  savePrecedence(sortedCoffees.value);
 };
 </script>
 
 <template>
   <main class="listingpage">
     <draggable
-      :list="coffees"
+      :list="sortedCoffees"
       class="listingpage_wrapper"
       item-key="id"
       ghost-class="ghost"
-      @end="handleDragEnd"
+      @change="handleDragEnd"
     >
       <template #item="{ element }">
-        <div class="product_tile">
-          <ProductTile :coffee="element" />
-        </div>
+        <ProductTile :coffee="element" />
       </template>
     </draggable>
   </main>

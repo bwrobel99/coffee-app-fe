@@ -1,19 +1,22 @@
 import { useToast } from "vue-toast-notification";
+import { ref, computed } from "vue";
 
-export const useCoffeePrecedence = (key) => {
+export const useCoffeePrecedence = (key = "allCoffeesListPrecedence") => {
   const $toast = useToast();
 
-  const rawPrecedence = localStorage.getItem(key);
-  const coffeesPrecedence = rawPrecedence ? JSON.parse(rawPrecedence) : [];
+  const rawPrecedence = ref(localStorage.getItem(key));
+  const coffeesPrecedence = computed(() =>
+    rawPrecedence.value ? JSON.parse(rawPrecedence.value) : []
+  );
 
   const sortWithPrecedence = (coffees) => {
     if (!coffeesPrecedence) return coffees;
 
-    coffees.sort(
+    return [...coffees].sort(
       (a, b) =>
-        coffeesPrecedence.indexOf(a.id) - coffeesPrecedence.indexOf(b.id)
+        coffeesPrecedence.value.indexOf(a.id) -
+        coffeesPrecedence.value.indexOf(b.id)
     );
-    return coffees;
   };
 
   const savePrecedence = (sortedCoffees, showToast = true) => {
