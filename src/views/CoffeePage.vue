@@ -39,7 +39,11 @@
     <main class="productpage">
       <div class="productpage_wrapper">
         <div class="product_tile">
-            <ProductTile :coffee="items" />
+            <ProductTile 
+                :coffee="item in items" 
+                :key="item.id"
+                :showDescription="true"        
+            />
           </div>
         </div>
     </main>

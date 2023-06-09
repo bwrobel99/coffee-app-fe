@@ -9,11 +9,16 @@ const props = defineProps({
     required: true
   },
 
+  showDescription: {
+  type: Boolean,
+  default: false
+}
+
 
 });
 
 // Destructuring from props
-const { id, name, price, discount } = props.coffee;
+const { id, name, price, discount, description } = props.coffee;
 
 // Define a ref to track the favorite state
 const isFavorite = ref(false);
@@ -29,7 +34,7 @@ const addToCart = () => {
 
 const openProductCard = (id) => {
   console.log('Opened coffee page with id:', id);
-  router.push({name: "product" });
+  //router.push({name: "product" });
 };
 </script>
 
@@ -54,6 +59,7 @@ const openProductCard = (id) => {
         <div class="newPrice" v-if="price > (price - discount)">{{ price - discount }} zł</div>
         <div class="price">{{ price }} zł</div>
       </div>
+      <div v-if="showDescription" class="description">{{ description }}</div>
       </RouterLink>
       <button @click="addToCart(coffee)">Add to cart</button>
     </div>
