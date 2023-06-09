@@ -1,19 +1,12 @@
 <script setup>
-<<<<<<< HEAD
-import { defineProps, ref, computed } from "vue";
-=======
-import { defineProps, ref, getCurrentInstance, onMounted, watchEffect } from 'vue';
->>>>>>> MS
+import { defineProps, ref, getCurrentInstance, onMounted, watchEffect,  } from 'vue';
+import { useRouter } from 'vue-router'
 
 // get props from parent component
 const props = defineProps({
   coffee: {
     type: Object,
-<<<<<<< HEAD
     required: true,
-  },
-=======
-    required: true
   },
   favoriteItems: {
     type: Array,
@@ -23,7 +16,6 @@ const props = defineProps({
     type: Array,
     required: true
   }
->>>>>>> MS
 });
 
 // Destructuring from props
@@ -66,52 +58,43 @@ const toggleFavorite = () => {
 };
 //Local Storage
 
-onMounted(() => {
-  if (!props.favoriteItems || props.favoriteItems.length === 0) {
-    const storedData = localStorage.getItem('favoriteItems');
-    if (storedData) {
-      emit('update:favoriteItems', JSON.parse(storedData));
-    }
-  }
-});
+// onMounted(() => {
+//   if (!props.favoriteItems || props.favoriteItems.length === 0) {
+//     const storedData = localStorage.getItem('favoriteItems');
+//     if (storedData) {
+//       emit('update:favoriteItems', JSON.parse(storedData));
+//     }
+//   }
+// });
 
 watchEffect(() => {
   localStorage.setItem('favoriteItems', JSON.stringify(props.favoriteItems));
 });
 
+const router = useRouter()
+const openProductPage = (id) => {
+  router.push({ 
+    name: 'product', 
+    params: { id: id }
+  })
+}
 </script>
 
 <template>
-<<<<<<< Updated upstream
-  <div class="tile">
-=======
   <div class="tile" >
->>>>>>> Stashed changes
     <div class="image">
       <img src="../assets/kawa_test.svg" :alt="name" @click="openProductPage(id)">
       <div class="favorite">
-<<<<<<< HEAD
-        <button class="favorite-button" @click="toggleFavorite">
-          <i
-            :class="[
-              'heart-icon',
-              isFavorite ? 'fas fa-heart' : 'far fa-heart',
-            ]"
-            alt="Favorite"
-          ></i>
-=======
         <button class="favorite-button" @click="toggleFavorite()">
           <i :class="['heart-icon', isFavorite ? 'fas fa-heart' : 'far fa-heart']" alt="Favorite"></i>
->>>>>>> MS
         </button>
       </div>
     </div>
     <div class="desc">
       <h1 class="title">{{ name }}</h1>
       <div class="prices">
-        <div class="newPrice" v-if="price > price - discount">
-          {{ price - discount }} zł
-        </div>
+        <!-- if price after discount is lower than regular price display new price -->
+        <div class="newPrice" v-if="price > (price - discount)">{{ price - discount }} zł</div>
         <div class="price">{{ price }} zł</div>
       </div>
       <div class="details">{{ description }}</div>
@@ -138,16 +121,11 @@ watchEffect(() => {
 }
 
 .favorite-button {
-<<<<<<< Updated upstream
-  background: white;
-  border: 0;
-=======
   background: transparent; 
   border: 0; 
->>>>>>> Stashed changes
   padding: 0px;
   cursor: pointer;
-  outline: none;
+  outline: none; 
   transition: background-color 0.3s;
 }
 

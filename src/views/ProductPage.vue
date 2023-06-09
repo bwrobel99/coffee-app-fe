@@ -1,5 +1,7 @@
 <script setup>
 import ProductTile from "../components/ProductTile.vue";
+import { useRouter } from 'vue-router';
+import { ref } from 'vue';
 </script>
 <script>
 export default {
@@ -9,7 +11,10 @@ export default {
     };
   },
   mounted() {
-    fetch("/api/coffees")
+    const router = useRouter();
+    const id = router.currentRoute.value.params.id;
+    let url = '/api/coffees/' + id
+    fetch(url)
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -19,7 +24,7 @@ export default {
       })
       .then((data) => {
         // assign fetched data to table
-        this.items = data[1];
+        this.items = data;
       });
   },
 };
@@ -30,10 +35,6 @@ export default {
   <main class="productpage">
     <div class="productpage_wrapper">
       <div class="product_tile">
-<<<<<<< Updated upstream
-        <!-- {{ items }}-->
-        {<ProductTile :coffee="items" />}
-=======
         <ProductTile :coffee="items" />
         <div class="cartBtn">
           <div class="price">{{ items.price }} 10zl</div>
@@ -41,7 +42,6 @@ export default {
           <button @click="addToCart">Add To Cart</button>
         </div>
         </div>
->>>>>>> Stashed changes
       </div>
     </div>
   </main>
