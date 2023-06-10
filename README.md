@@ -22,6 +22,7 @@ Features:
 ## Installation
 1. Clone the repository `git clone https://github.com/bwrobel99/coffee-app-fe.git`
 2. Change directory `cd coffee-app-fe`
-3. At the terminal run the command `npm run dev`
-4. It will open localhost at `http://127.0.0.1:5173/`
+3. Install dependencies `npm install`
+4. At the terminal run the command `npm run dev`
+5. It will open localhost at `http://127.0.0.1:5173/`
 
