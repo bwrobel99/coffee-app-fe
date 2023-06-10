@@ -1,7 +1,7 @@
 # coffee-app-fe
 
 ## Details
-coffee-app-fe is a single page application. 
+coffee-app-fe is a single page application that allows you to buy your favorite coffee without waiting in long line at coffee house. 
 
 Features:
 - viewing available selection of coffees
@@ -9,8 +9,6 @@ Features:
 - customizing order of coffees
 - adding coffee to favorite
 - placing orders
-- fast shopping path
-- last order
 
 
 ## Tech stack
