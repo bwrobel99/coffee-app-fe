@@ -307,6 +307,9 @@ main.startpage {
   min-height: 50px;
   cursor: pointer;
 }
+#app .productpage .productpage_wrapper .cartBtn .btn button a {
+  color: #fff;
+}
 
 #app {
   height: 100%;
