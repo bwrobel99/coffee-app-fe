@@ -1,21 +1,25 @@
 @use "variables" as v;
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 #app {
+    height: 100%;
     margin: 0;
     padding: 0;
+    font-family: "mainFont";
     main {
         background-color: v.$bg_color;
-        a {
-            text-decoration: none;
-            color: #000;
-            font-family: 'mainFont';
-        }
-        h1 {
-            color: #000;
-            font-family: 'mainFont';
-        }
+        height: calc(100vh - v.$header_height);
+    a {
+      text-decoration: none;
+      color: #000;
+      font-family: "mainFont";
     }
+    h1 {
+      color: #000;
+      font-family: "mainFont";
+    }
+  }
 }

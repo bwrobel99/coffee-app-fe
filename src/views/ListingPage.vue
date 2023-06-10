@@ -43,4 +43,7 @@ const handleDragEnd = () => {
 .ghost {
   opacity: 0.5;
 }
+.details {
+  display: none;
+}
 </style>

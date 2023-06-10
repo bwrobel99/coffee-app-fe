@@ -11,8 +11,8 @@ export default {
       <ul>
         <li><router-link to="/listing">Products</router-link></li>
         <li><router-link to="/favorite">Favorite</router-link></li>
-        <li><router-link to="/Last Order">Last Order</router-link></li>
-        <li><router-link to="/Order">Order</router-link></li>
+        <!-- <li><router-link to="/lastorder">Last Order</router-link></li> -->
+        <li><router-link to="/order">Order</router-link></li>
       </ul>
     </div>
   </div>

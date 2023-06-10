@@ -3,6 +3,9 @@
 main.favorites-page {
     height: 100%;
     padding: 0 0 20px;
+    .details {
+        display: none;
+    }
 }
 
 .favorites-container {
@@ -14,4 +17,12 @@ main.favorites-page {
     padding: 20px 0 0;
     // align-items: flex-start;
     row-gap: 20px;
+    & > div {
+        width: 100%;
+        max-width: calc((100% / 4 - 30px));
+        @media screen and (min-width: $desktop_breakpoint) {
+            // width: calc((100% / 4) - 30px);
+            max-width: calc((100% / 2) - 30px);
+        }
+    }
 }

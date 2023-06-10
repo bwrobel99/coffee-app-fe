@@ -55,14 +55,17 @@ const handleFavoriteButtonClick = () => switchFavoriteStatus(props.coffee.id);
           </div>
           <div class="price">{{ coffee.price }} zł</div>
         </div>
+        <div class="details">{{ coffee.description }}</div>
       </div>
     </div>
   </div>
 </template>
 
 <style>
-.image {
+.tile {
   position: relative;
+}
+.image {
   display: inline-block;
 }
 
@@ -73,7 +76,6 @@ const handleFavoriteButtonClick = () => switchFavoriteStatus(props.coffee.id);
   padding: 6px;
   background-color: white;
   color: black;
-  transform: translate(150%, 0%);
 }
 
 .favorite-button {
